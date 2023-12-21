@@ -83,18 +83,18 @@ This project is designed to explain the relationship between non-user entities a
 
 3. You must provide a URL where a user can provide a username/email address, and a password to login or to create a user account. If you are using Auth0, this can be a URL in your app that redirects to Auth0.
 
-4. You must have a User entity in your database which stores at least the unique user ID of each user of your application.
+4. You must have a User entity in your database which stores at least the unique user ID of each user of your application
    * The first time someone logs in and generates a JWT in your app they must be added as a user in the User entity of your database.
 
 5. Requests for the protected resources must use a JWT for authentication. So you must show the JWT to the user after the login. You must also show the user's unique ID after login.
 
-6. The choice of what to use as the user's unique ID is up to you.
+6. The choice of what to use as the user's unique ID is up to you
    * You can use the value of "sub" from the JWT as a user's unique ID. But this is not required.
 
-7. You must provide an unprotected endpoint GET /users that returns all the users currently registered in the app, even if they don't currently have any relationship with a non-user entity. The response does not need to be paginated.
+7. You must provide an unprotected endpoint GET /users that returns all the users currently registered in the app, even if they don't currently have any relationship with a non-user entity. The response does not need to be paginated
    * Minimally this endpoint should display the unique ID for a user. Beyond that it is your choice what else is displayed.
 
-8. There is no requirement for an integration at the UI level between the login page and the REST API endpoints.
+8. There is no requirement for an integration at the UI level between the login page and the REST API endpoints
    * The graders will login using the app's login/create user account URL.
    * Copy the JWT displayed and manually paste it in the Postman environment files to run the tests.
 
